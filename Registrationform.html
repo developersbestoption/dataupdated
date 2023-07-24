@@ -6,9 +6,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.min.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
-    <link href="css/bootstrap-datepicker.css" rel="stylesheet" /></head>
+    <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
 <body>
-    <form method="post" action="./student_reg_form.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" enctype="multipart/form-data">
+    <form method="POST" action="Registrationform.php" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" enctype="multipart/form-data">
         <div class="container" style="margin-left:15%" >
             <img src="#" class="img-responsive"/></div> 
        <br />
@@ -16,8 +18,11 @@
   <div class="row">
       <div class="col-md-6"><h4>Student Registration form</h4></div>
       <div class="col-md-6"><span class="pull-right">
-        <span class="glyphicon glyphicon-home">
-           <a href="index.html" >HOME</a>
+        <span >
+          
+           <a href="index.html" ><i class="fa-solid fa-house"></i>HOME</a>
+          
+          
            
         </span></div>
       <div class="col-md-3"><span class="pull-right"><input type="submit" name="Edit_btn" value="Edit" id="Edit_btn" class="btn btn-large btn-warning" /> </span></div>
@@ -96,26 +101,26 @@
             </div>
           
           <div class="row form-group">
-            <label class="col-md-1 control-label" for="first_name">Name of the student</label>  
+            <label class="col-md-1 control-label" for="first_name" >Name of the student</label>  
             <div class="col-md-2">
 			<div class="input-group">
 			<!--span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span-->
-                <input name="name_txtbx" type="text" id="name_txtbx" class="form-control input-md" />
+                <input name="name" type="text" id="name" class="form-control input-md" />
 
             </div></div>
 
-            <label class="col-md-1 control-label" for="middle_name">Gender</label>  
+            <label class="col-md-1 control-label" for="middle_name" >Gender</label>  
             <div class="col-md-2">
 			<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-                <select name="gdrdrpdwnlist" id="gdrdrpdwnlist" class="form-control input-md">
+                <select name="Gender" id="Gender" class="form-control input-md">
 	<option value=""></option>
-	<option value="Male">Male</option>
-	<option value="Female">Female</option>
+	<option value="Male" name="Gender">Male</option>
+	<option value="Female" name="Gender">Female</option>
 
 </select>
                </div>
@@ -135,13 +140,13 @@
            
    
   <div class="row form-group">
-            <label class="col-md-1 control-label" for="first_name">Blood Group</label>  
+            <label class="col-md-1 control-label" for="first_name" >Blood Group</label>  
             <div class="col-md-2">
 			<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-                <select name="bldgrpdrpdwn" id="bldgrpdrpdwn" class="form-control input-md">
+                <select name="BloodGroup" id="BloodGroup" class="form-control input-md">
 	<option value="---Select---">---Select---</option>
 	<option value="A+">A+</option>
 	<option value="A-">A-</option>
@@ -162,17 +167,17 @@
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-                  <input name="plc_txtbx" type="text" id="plc_txtbx" class="form-control input-md" />
+                  <input name="pob" type="text" id="pob" class="form-control input-md" />
              
             </div>
 		</div>
-            <label class="col-md-1 control-label" for="last_name">Mother Tongue</label>  
+            <label class="col-md-1 control-label" for="last_name" >MotherTongue</label>  
             <div class="col-md-2">
 			<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-                <select name="mothertngedrpdwn" id="mothertngedrpdwn" class="form-control input-md">
+                <select name="MotherTongue" id="MotherTongue" class="form-control input-md">
 	<option value="---Select---">---Select---</option>
 	<option value="Telugu">Telugu</option>
 	<option value="Urdu">Urdu</option>
@@ -187,13 +192,13 @@
          
     </div>
       <div class="row form-group">
-            <label class="col-md-1 control-label" for="first_name">Caste</label>  
+            <label class="col-md-1 control-label" for="first_name" >Caste</label>  
             <div class="col-md-2">
 			<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-              <select name="cstedrpdwn" id="cstedrpdwn" class="form-control input-md">
+              <select name="caste" id="caste" class="form-control input-md">
 	<option value="---Select---">---Select---</option>
 	<option value="OC">OC</option>
 	<option value="EBC">EBC</option>
@@ -210,13 +215,13 @@
 </select>
             </div></div>
 
-            <label class="col-md-1 control-label" for="middle_name">Religion</label>  
+            <label class="col-md-1 control-label" for="middle_name" >Religion</label>  
             <div class="col-md-2">
 			<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-              <select name="rligndrpdwn" id="rligndrpdwn" class="form-control input-md">
+              <select name="Religion" id="Religion" class="form-control input-md">
 	<option value="---Select---">---Select---</option>
 	<option value="Hindu">Hindu</option>
 	<option value="Muslim">Muslim</option>
@@ -234,7 +239,7 @@
 			</span>
             
 
-                <select name="ntndrpdwn" id="ntndrpdwn" class="form-control input-md">
+                <select name="Nationality" id="Nationality" class="form-control input-md">
 	<option value="---Select---">---Select---</option>
 	<option value="INDIAN">INDIAN</option>
 	<option value="Others">Others</option>
@@ -254,7 +259,7 @@
 			</span>
              
                 
-                 <input name="Aadr_txtbx" type="text" id="Aadr_txtbx" class="form-control input-md" />
+                 <input name="Aadhar" type="text" id="Aadhar" class="form-control input-md" />
                
             </div></div>
 
@@ -709,7 +714,7 @@
 
                <div class="form-group row">
             <div class="col-md-6 text-center">
-                        <input type="submit" name="save_btn" value="Save"  id="save_btn" controltovalidate="FileUpload1" class="btn btn-large btn-success" />
+                        <input type="submit"  value="submit"   controltovalidate="FileUpload1" class="btn btn-large btn-success" />
                         <input type="submit" name="address_btnclr" value="Clear"  id="address_btnclr" class="btn btn-large btn-danger" />
                 </div>
                    <div class="col-md-6 text-center">    
