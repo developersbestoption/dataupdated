@@ -15,7 +15,7 @@
    </style>
     </head>
 <body>
-     <form method="post" action="#"  id="rollnumberform"  enctype="multipart/form-data">
+     <form method="post" action="rollgen.php"  id="rollnumberform"  enctype="multipart/form-data">
       <div class="container" style="margin-left:15%"></div>
     <div class="container">
   <div class="row">
@@ -33,7 +33,7 @@
             <div class="col-md-4 panel panel-heading" style="display:none; color:red" id="address_error" ></div>
           </div>
             <div class="row form-group">
-            <label class="col-md-2 control-label" for="H.no">New Roll Number</label>
+            <label class="col-md-2 control-label" for="roll_txtbx">New Roll Number</label>
             <div class="col-md-2">
 		<div class="input-group">
 			<span class="input-group-addon">
@@ -49,37 +49,57 @@
                  </div>
           </div>
             <div class="row form-group">
-            <label class="col-md-2 control-label" for="H.no">First Name</label>
+            <label class="col-md-2 control-label" for="name_txtbx">Name</label>
             <div class="col-md-2">
 		<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-                <input name="firstname_txtbx" type="text" id="firstname_txtbx" class="form-control input-md ac_village" style="text-transform:uppercase;" />
+                <input name="name_txtbx" type="text" id="name_txtbx" class="form-control input-md ac_village" style="text-transform:uppercase;" />
              </div>
-                <span id="RequiredFieldValidator2" style="color:Red;visibility:hidden;">Please enter First Name</span>
+                <span id="RequiredFieldValidator2" style="color:Red;visibility:hidden;"> Name</span>
             </div>
-            <label class="col-md-2 control-label" for="street">Middle Name</label>
+            <label class="col-md-2 control-label" for="yoa_txtbx">year of admision</label>
             <div class="col-md-2">
 		<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-                <input name="middlename_txtbx" type="text" id="middlename_txtbx" class="form-control input-md ac_street" style="text-transform:uppercase;" />
+      <input name="yoa_txtbx" type="date" id="yoa_txtbx" class="form-control input-md" /> 
             </div></div>
-            <label class="col-md-2 control-label" for="Village">Last Name(Surname)</label>
+            <label class="col-md-2 control-label" for="toc_drpdwn">type of course</label>
             <div class="col-md-2">
 		<div class="input-group">
 			<span class="input-group-addon">
 			<i class="glyphicon glyphicon-user"></i>
 			</span>
-             <input name="lastname_txtbx" type="text" id="lastname_txtbx" class="form-control input-md ac_village" style="text-transform:uppercase;" />
-            </div>
-             <span id="RequiredFieldValidator3" style="color:Red;visibility:hidden;">Please enter Surname</span>
+      <select name="toc_drpdwn" id="toc_drpdwn" class="form-control input-md ac_district">
+        <option value="--select-- ">--select-- </option>
+        <option value="regular">regular</option>
+        <option value="open">open</option>
+      </select>            </div>
+             <span id="RequiredFieldValidator3" style="color:Red;visibility:hidden;">Please enter type of course </span>
 		</div>
           </div>
+          <label class="col-md-2 control-label" for="branch_drpdwn">branch</label>
+          <div class="col-md-2">
+  <div class="input-group">
+    <span class="input-group-addon">
+    <i class="glyphicon glyphicon-user"></i>
+    </span>
+    <select name="branch_drpdwn" id="branch_drpdwn" class="form-control input-md ac_district">
+      <option value="--select-- ">--select-- </option>
+      <option value="CSE">CSE</option>
+      <option value="ECE">ECE</option>
+      <option value="EEE">EEE</option>
+      <option value="MEC">MEC</option>
+      <option value="CIVIL">CIVIL</option>
+    </select></div>
+           <span id="RequiredFieldValidator3" style="color:Red;visibility:hidden;">Please enter BRANCH</span>
+  </div>
+        
           <div class="row form-group">
-           <label class="col-md-2 control-label" for="District">Category</label>  
+           <label class="col-md-2 control-label" for="category_drpdwn">Category</label>  
              <div class="col-md-2">
                 <select name="category_drpdwn" id="category_drpdwn" class="form-control input-md ac_district">
 	<option value="--select-- ">--select-- </option>
@@ -90,20 +110,37 @@
              </div>
             </div>
           <div class="row form-group">
-            <label class="col-md-2 control-label" for="pin_code">Admission No</label>  
+            <label class="col-md-2 control-label" for="Admissiono_txtbx">Admission No</label>  
             <div class="col-md-2">
                 <input name="Admissiono_txtbx" type="text" id="Admissiono_txtbx" class="form-control input-md" placeholder="" />
             </div>
-              <label class="col-md-2 control-label" for="pin_code">Admission Date</label>  
+              <label class="col-md-2 control-label" for="doa_txtbx">Admission Date</label>  
             <div class="col-md-2">
 			<div class="input-group">
                 <span class="input-group-addon">
                       <span class="glyphicon-calendar glyphicon"></span>
                   </span>
-		    <input name="doa" type="date" id="doa" class="form-control input-md" /> 
+		    <input name="doa_txtbx" type="date" id="doa_txtbx" class="form-control input-md" /> 
                </div>
 		     </div>
-          </div>        
+          </div>   
+          <div class="row form-group">
+            
+            <label class="col-md-2 control-label" for="College_txtbx">college name</label>  
+            <div class="col-md-2">
+                <input name="College_txtbx" type="text" id="College_txtbx" class="form-control input-md" placeholder="" />
+            </div>    
+            <div class="row form-group">
+              <label class="col-md-2 control-label" for="course_drpdwn">course</label>  
+                <div class="col-md-2">
+                   <select name="course_drpdwn" id="course_drpdwn" class="form-control input-md ac_district">
+     <option value="--select-- ">--select-- </option>
+     <option value="Counselling">DIPLOMA</option>
+     <option value="Spot">B-TECH</option>
+     <option value="Management">MBA</option>
+   </select>
+                </div>
+               </div>
              <div class="form-group row">
             <div class="col-md-8 text-center">
                    <input type="submit" name="Button1" value="Save"  id="Button1" class="btn btn-large btn-success" />
@@ -111,23 +148,7 @@
             </div>
           </div>
         </div>
-        <div class="container" style="margin-top:20px; border:3px solid #0e0d0d; border-radius: 10px;">
-            <br />
-            <div class="form-group row"><div class="col-md-12"><B>For Bulk upload please select sample file from here</B> 
-                <a href="excel/Newrollnumber.xlsx">Newrollnumber.xlsx</a></div></div><br />
-            <div class="form-group row">
-                <label class="col-md-2 control-label" for="pin_code">Bulk Upload</label>  
-            <div class="col-md-4">
-             <input type="file" name="FileUpload1" id="FileUpload1" class="form-control input-md" placeholder="" />
-             <span id="ctl07" style="color:Red;display:none;">Please select Excel File</span>
-             <span id="RegularExpressionValidator1" style="color:Red;display:none;">Please select a valid excel file.</span>
-            </div>
-                <div class="col-md-6">
-                  <input type="submit" name="ctl08" value="Upload" controltovalidate="FileUpload1" class="btn btn-large btn-success" />    
-            </div>
-        </div>
-            <span id="Label1"></span>
-        </div> 
+       </div> 
 </form>
 </body>
 </html>
